@@ -1,0 +1,691 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2024 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[06:51:21.275833] Configured Lic search path (21.01-s002): 5280@14.139.1.126
+
+Version: 21.19-s055_1, built Wed May 29 04:03:07 PDT 2024
+Options: -files synthesis.tcl -log ../Synthesis/Logs/genus_synthesis.log 
+Date:    Sat Nov 29 06:51:21 2025
+Host:    vlsi73.ee.iitb.ac.in (x86_64 w/Linux 3.10.0-1160.119.1.el7.x86_64) (64cores*256cpus*2physical cpus*AMD EPYC 7713 64-Core Processor 512KB) (528084468KB)
+PID:     178740
+OS:      CentOS Linux release 7.9.2009 (Core)
+
+
+[06:51:22.228960] Periodic Lic check successful
+[06:51:22.228976] Feature usage summary:
+[06:51:22.228977] Genus_Synthesis
+Checking out license: Genus_Synthesis
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Loading tool scripts...
+Finished loading tool scripts (20 seconds elapsed).
+
+#@ Processing -files option
+@genus 1> source synthesis.tcl
+#@ Begin verbose source ./synthesis.tcl
+@file(synthesis.tcl) 2: set_db init_lib_search_path {/vlsi/pdk/course_pdk_2025/tsmc_gp_65_stdio/tcbn65gplus_200a/TSMCHOME/digital/Front_End/timing_power_noise/CCS/tcbn65gplus_200a}
+  Setting attribute of root '/': 'init_lib_search_path' = /vlsi/pdk/course_pdk_2025/tsmc_gp_65_stdio/tcbn65gplus_200a/TSMCHOME/digital/Front_End/timing_power_noise/CCS/tcbn65gplus_200a
+@file(synthesis.tcl) 5: read_libs {tcbn65gpluswc_ccs.lib}
+
+Threads Configured:3
+
+  Message Summary for Library tcbn65gpluswc_ccs.lib:
+  **************************************************
+  Missing a function attribute in the output pin definition. [LBR-518]: 1
+  An unsupported construct was detected in this library. [LBR-40]: 1
+  **************************************************
+ 
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.900000, 125.000000) in library 'tcbn65gpluswc_ccs.lib'.
+        : The nominal operating condition is represented, either by the nominal PVT values specified in the library source (via nom_process,nom_voltage and nom_temperature respectively), or by the default PVT values (1.0,1.0,1.0).
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNA' must have an output pin.
+        : Add the missing output pin(s), then reload the library. Else the library cell will be marked as timing model i.e. unusable. Timing_model means that the cell does not have any defined function. If there is no output pin, Genus will mark library cell as unusable i.e. the attribute 'usable' will be marked to 'false' on the libcell. Therefore, the cell is not used for mapping and it will not be picked up from the library for synthesis. If you query the attribute 'unusable_reason' on the libcell; result will be: 'Library cell has no output pins.'Note: The message LBR-9 is only for the logical pins and not for the power_ground pins. Genus will depend upon the output function defined in the pin group (output pin) of the cell, to use it for mapping. The pg_pin will not have any function defined.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNA' must have an output pin.
+Warning : Unusable clock gating integrated cell found at the time of loading libraries. This warning happens because a particular library cell is defined as 'clock_gating_integrated_cell', but 'dont_use' attribute is defined as true in the liberty library. To make Genus use this cell for clock gating insertion, 'dont_use' attribute should be set to false. [LBR-101]
+        : Clock gating integrated cell name: 'CKLHQD20'
+        : To make the cell usable, change the value of 'dont_use' attribute to false.
+Warning : Unusable clock gating integrated cell found at the time of loading libraries. This warning happens because a particular library cell is defined as 'clock_gating_integrated_cell', but 'dont_use' attribute is defined as true in the liberty library. To make Genus use this cell for clock gating insertion, 'dont_use' attribute should be set to false. [LBR-101]
+        : Clock gating integrated cell name: 'CKLHQD24'
+Warning : Unusable clock gating integrated cell found at the time of loading libraries. This warning happens because a particular library cell is defined as 'clock_gating_integrated_cell', but 'dont_use' attribute is defined as true in the liberty library. To make Genus use this cell for clock gating insertion, 'dont_use' attribute should be set to false. [LBR-101]
+        : Clock gating integrated cell name: 'CKLNQD20'
+Warning : Unusable clock gating integrated cell found at the time of loading libraries. This warning happens because a particular library cell is defined as 'clock_gating_integrated_cell', but 'dont_use' attribute is defined as true in the liberty library. To make Genus use this cell for clock gating insertion, 'dont_use' attribute should be set to false. [LBR-101]
+        : Clock gating integrated cell name: 'CKLNQD24'
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP16' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP16' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP32' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP32' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP4' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP4' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP64' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP64' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP8' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP8' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'GDCAP' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'GDCAP' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'GDCAP10' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'GDCAP10' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'GDCAP2' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'GDCAP2' must have an output pin.
+Warning : Maximum message print count reached. [MESG-11]
+        : Maximum print count of '20' reached for message 'LBR-9'.
+@file(synthesis.tcl) 8: read_hdl -v2001 ../Verilog/lagrange_interp.v
+@file(synthesis.tcl) 9: read_hdl -v2001 ../Verilog/mod_add.v  
+@file(synthesis.tcl) 10: read_hdl -v2001 ../Verilog/mod_sub.v
+@file(synthesis.tcl) 11: read_hdl -v2001 ../Verilog/mod_mul.v
+@file(synthesis.tcl) 12: read_hdl -v2001 ../Verilog/mod_inv.v
+@file(synthesis.tcl) 15: elaborate lagrange_interp
+  Library has 441 usable logic and 280 usable sequential lib-cells.
+Info    : Elaborating Design. [ELAB-1]
+        : Elaborating top-level block 'lagrange_interp' from file '../Verilog/lagrange_interp.v'.
+Info    : Done Elaborating Design. [ELAB-3]
+        : Done elaborating 'lagrange_interp'.
+Checking for analog nets...
+Check completed for analog nets.
+Checking for source RTL...
+Check completed for source RTL.
+Running Unified Mux Engine Tricks...
+Completed Unified Mux Engine Tricks
+
+Stage: post_elab
+-------------------------------------------------------
+| Trick             | Accepts | Rejects | Runtime (s) | 
+-------------------------------------------------------
+| ume_constant_bmux |       0 |       0 |        0.01 | 
+-------------------------------------------------------
+Starting clip mux common data inputs [v1.0] (stage: post_elab, startdef: lagrange_interp, recur: true)
+Completed clip mux common data inputs (accepts: 0, rejects: 0, runtime: 0.010s)
+Starting clip the non-user hierarchies [v2.0] (stage: post_elab, startdef: lagrange_interp, recur: true)
+Completed clip the non-user hierarchies (accepts: 0, rejects: 0, runtime: 0.010s)
+
+Stage: post_elab
+--------------------------------------------------------
+| Transform          | Accepts | Rejects | Runtime (s) | 
+--------------------------------------------------------
+| hlo_clip_mux_input |       0 |       0 |        0.01 | 
+| hlo_clip           |       0 |       0 |        0.01 | 
+--------------------------------------------------------
+UM:   flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:*                                                                   elaborate
+@file(synthesis.tcl) 18: read_sdc constraints.sdc
+Warning : Unsupported SDC command option. [SDC-201] [set_input_delay]
+        : The set_input_delay command is not supported on ports which have a clock already defined 'port:lagrange_interp/clk'.
+        : The current version does not support this SDC command option.  However, future versions may be enhanced to support this option.
+Error   : Invalid SDC command option combination. [SDC-204] [set_driving_cell]
+        : The set_driving_cell command cannot find a lib_cell named 'INVX4' in library 'library:default_emulate_libset_max/tcbn65gpluswc_ccs' specified with the '-libcell' or '-cell' option.
+        : This option is not valid for the indicated SDC command. Check the SDC command and contact Cadence customer support if you believe this option combination should be supported.
+Error   : Could not interpret SDC command. [SDC-202] [read_sdc]
+        : The 'read_sdc' command encountered an error while processing this command on line '17' of the SDC file 'constraints.sdc': set_driving_cell -lib_cell INVX4 [all_inputs].
+        : The 'read_sdc' command encountered a problem while trying to evaluate an SDC command. This SDC command will be added to the Tcl variable $::dc::sdc_failed_commands.
+Statistics for commands executed by read_sdc:
+ "all_inputs"               - successful      2 , failed      0 (runtime  0.01)
+ "all_outputs"              - successful      2 , failed      0 (runtime  0.01)
+ "create_clock"             - successful      1 , failed      0 (runtime  0.00)
+ "get_clocks"               - successful      1 , failed      0 (runtime  0.00)
+ "get_ports"                - successful      2 , failed      0 (runtime  0.00)
+ "set_clock_uncertainty"    - successful      1 , failed      0 (runtime  0.00)
+ "set_dont_touch_network"   - successful      1 , failed      0 (runtime  0.01)
+ "set_driving_cell"         - successful      0 , failed      1 (runtime  0.00)
+ "set_input_delay"          - successful      1 , failed      0 (runtime  0.01)
+ "set_load"                 - successful      1 , failed      0 (runtime  0.00)
+ "set_output_delay"         - successful      1 , failed      0 (runtime  0.00)
+Warning : Total failed commands during read_sdc are 1
+Warning : One or more commands failed when these constraints were applied. [SDC-209]
+        : The 'read_sdc' command encountered a problem while processing commands.
+        : You can examine the failed commands or save them to a file by querying the Tcl variable $::dc::sdc_failed_commands.
+read_sdc completed in 00:00:00 (hh:mm:ss)
+@file(synthesis.tcl) 21: syn_generic
+
+Stage: pre_early_cg
+-----------------------------------------------
+| Transform | Accepts | Rejects | Runtime (s) | 
+-----------------------------------------------
+-----------------------------------------------
+##Generic Timing Info for library domain: _default_ typical gate delay: 44.5 ps std_slew: 12.0 ps std_load: 2.4 fF
+Starting mux data reorder optimization [v1.0] (stage: pre_to_gen_setup, startdef: lagrange_interp, recur: true)
+Completed mux data reorder optimization (accepts: 0, rejects: 0, runtime: 0.014s)
+
+Stage: pre_to_gen_setup
+-----------------------------------------------------
+| Transform       | Accepts | Rejects | Runtime (s) | 
+-----------------------------------------------------
+| hlo_mux_reorder |       0 |       0 |        0.01 | 
+-----------------------------------------------------
+Info    : Deleting instances not driving any primary outputs. [GLO-34]
+        : Deleting 2 sequential instances.
+        : Optimizations such as constant propagation or redundancy removal could change the connections so a hierarchical instance does not drive any primary outputs anymore. To see the list of deleted hierarchical instances, set the 'information_level' attribute to 2 or above. If the message is truncated set the message attribute 'truncate' to false to see the complete list. To prevent this optimization, set the 'delete_unloaded_insts' root/subdesign attribute to 'false' or 'preserve' instance attribute to 'true'.
+Info    : Deleting instances not driving any primary outputs. [GLO-34]
+        : Deleting 2 hierarchical instances.
+Info    : Replacing a flip-flop with a logic constant 0. [GLO-12]
+        : The instance is 'mod_inv_inst/inv_reg[1]'.
+        : To prevent this optimization, set the 'optimize_constant_0_flops' root attribute to 'false' or 'optimize_constant_0_seq' instance attribute to 'false'. You can also see the complete list of deleted sequential with command "report sequential -deleted" (on Reason "constant0").
+Info    : Replacing a flip-flop with a logic constant 0. [GLO-12]
+        : The instance is 'mod_inv_inst/inv_reg[2]'.
+Info    : Replacing a flip-flop with a logic constant 0. [GLO-12]
+        : The instance is 'mod_inv_inst/inv_reg[5]'.
+Info    : Replacing a flip-flop with a logic constant 0. [GLO-12]
+        : The instance is 'mod_inv_inst/inv_reg[6]'.
+Info    : Replacing a flip-flop with a logic constant 0. [GLO-12]
+        : The instance is 'mod_inv_inst/inv_reg[7]'.
+Info    : Replacing a flip-flop with a logic constant 0. [GLO-12]
+        : The instance is 'mod_inv_inst/inv_reg[8]'.
+Info    : Replacing a flip-flop with a logic constant 0. [GLO-12]
+        : The instance is 'mod_inv_inst/inv_reg[31]'.
+Info    : Replacing a flip-flop with a logic constant 0. [GLO-12]
+        : The instance is 'mod_inv_inst/inv_reg[255]'.
+Info    : Deleting instances not driving any primary outputs. [GLO-34]
+        : Deleting 8 sequential instances.
+Info    : Deleting instances not driving any primary outputs. [GLO-34]
+        : Deleting 1 hierarchical instance.
+Info    : Synthesizing. [SYNTH-1]
+        : Synthesizing 'lagrange_interp' to generic gates using 'medium' effort.
+Running Synthesis Turbo Flow Version 1.
+PBS_Generic-Start - Elapsed_Time 0, CPU_Time 0.0
+stamp 'PBS_Generic-Start' being created for table 'pbs_debug'
+
+  Total Time (Wall) |  Stage Time (Wall)  |   % (Wall)   |    Date - Time     |  Memory   | Stage
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:12:47(00:12:49) |  00:00:00(00:00:00) |   0.0(  0.0) |    7:04:14 (Nov29) |   5.44 GB | PBS_Generic-Start
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+Number of threads: 8 * 1   (id: pbs_debug, time_info v1.57)
+Info: (*N*) indicates data that was populated from previously saved time_info database
+Info: CPU time includes time of parent + longest thread
+TNS Restructuring config: no_value at stage: generic applied.
+Info    : Enabling Partition Based Synthesis. [PBS-1]
+        : Starting distributed generic optimization.
+Info    : Attempting to launch a super-threading server. [ST-120]
+        : Attempting to Launch server 1 of 8.
+        : The tool is entering super-threading mode and is launching a CPU server process.  This is enabled by the root attribute 'super_thread_servers' or 'auto_super_thread'.
+Info    : Connection established with super-threading server. [ST-110]
+        : The server 'localhost_1_0' is process '201038' on this host.
+        : The tool is entering super-threading mode and has established a connection with a CPU server process.  This is enabled by the root attributes 'super_thread_servers' or 'auto_super_thread'.
+     Generating lib_script file: /home/running_courses/EE671/EE671_38/lagrange-interpolation-tss/Synthesis/.pbs_vlsi73.ee.iitb.ac.in_178740/lib_script
+Start partitioning.  Summary: MEM {curr: 5.4G, peak: 6.3G, phys curr: 4.4G, phys peak: 5.3G}
+Start partitioning design lagrange_interp for generic optimization.
+Total generic instances for partitioning: 4516250
+	Generic partition 0: size 52749
+	Generic partition 1: size 4463501
+Done partitioning.  Summary: RT {elapsed: 0s, ST: 0s}, MEM {curr: 5.4G, peak: 6.3G, phys curr: 4.4G, phys peak: 5.3G}
+Start creating partition netlists.  Summary: MEM {curr: 5.4G, peak: 6.3G, phys curr: 4.4G, phys peak: 5.3G}
+Done creating partition netlists.  Summary: RT {elapsed: 48s, ST: 46s}, MEM {curr: 7.8G, peak: 7.8G, phys curr: 7.0G, phys peak: 7.0G}
+Start budgeting timing for partitions.  Summary: MEM {curr: 7.8G, peak: 7.8G, phys curr: 7.0G, phys peak: 7.0G}
+Done budgeting timing for partitions.  Summary: RT {elapsed: 141s, ST: 163s}, MEM {curr: 12.3G, peak: 12.3G, phys curr: 11.6G, phys peak: 11.6G}
+Start deriving partition netlists.  Summary: MEM {curr: 12.3G, peak: 12.3G, phys curr: 11.6G, phys peak: 11.6G}
+The inst 'pbs_genopt_0' is selected as pbs candidate. The instance cnt is: '52749'.
+The inst 'pbs_genopt_1' is selected as pbs candidate. The instance cnt is: '4463501'.
+Done deriving partition netlists.  Summary: RT {elapsed: 286s, ST: 282s}, MEM {curr: 9.4G, peak: 13.6G, phys curr: 13.0G, phys peak: 13.0G}
+Wait for super-thread servers to finish loading libraries.
+Start super thread servers forking.  Summary: MEM {curr: 5.7G, peak: 13.6G, phys curr: 8.6G, phys peak: 13.0G}
+                  Library loading done successfully on server 'localhost_1_0'.
+Info    : Connection established with super-threading server. [ST-110]
+        : The server 'localhost_1_1' is forked process '220194' on this host.
+Info    : Connection established with super-threading server. [ST-110]
+        : The server 'localhost_1_2' is forked process '220196' on this host.
+Info    : Connection established with super-threading server. [ST-110]
+        : The server 'localhost_1_3' is forked process '220198' on this host.
+Info    : Connection established with super-threading server. [ST-110]
+        : The server 'localhost_1_4' is forked process '220200' on this host.
+Info    : Connection established with super-threading server. [ST-110]
+        : The server 'localhost_1_5' is forked process '220202' on this host.
+Info    : Connection established with super-threading server. [ST-110]
+        : The server 'localhost_1_6' is forked process '220204' on this host.
+Info    : Connection established with super-threading server. [ST-110]
+        : The server 'localhost_1_7' is forked process '220206' on this host.
+Done super thread servers forking.  Summary: RT {elapsed: 1s, ST: 0s}, MEM {curr: 5.7G, peak: 13.6G, phys curr: 8.6G, phys peak: 13.0G}
+        Distributing super-thread jobs: {pbs_genopt_1 ./.pbs_vlsi73.ee.iitb.ac.in_178740/pbs_genopt_1.etf} {pbs_genopt_0 ./.pbs_vlsi73.ee.iitb.ac.in_178740/pbs_genopt_0.etf}
+          Sending 'pbs_genopt_1 ./.pbs_vlsi73.ee.iitb.ac.in_178740/pbs_genopt_1.etf' to server 'localhost_1_5'...
+            Sent 'pbs_genopt_1 ./.pbs_vlsi73.ee.iitb.ac.in_178740/pbs_genopt_1.etf' to server 'localhost_1_5'.
+          Sending 'pbs_genopt_0 ./.pbs_vlsi73.ee.iitb.ac.in_178740/pbs_genopt_0.etf' to server 'localhost_1_4'...
+            Sent 'pbs_genopt_0 ./.pbs_vlsi73.ee.iitb.ac.in_178740/pbs_genopt_0.etf' to server 'localhost_1_4'.
+          Received 'pbs_genopt_0 ./.pbs_vlsi73.ee.iitb.ac.in_178740/pbs_genopt_0.etf' from server 'localhost_1_4'. (206756 ms elapsed)
+       Partition:  pbs_genopt_0 - PBS_Generic_Opt-Distributed_Read_DB - Elapsed_Time 0.00, CPU_Time 0.00
+       Partition:  pbs_genopt_0 - PBS_Generic_Opt-Distributed_Generic - Elapsed_Time 203.00, CPU_Time 200.98
+       Partition:  pbs_genopt_0 - PBS_Generic_Opt-Distributed_Prop_Const - Elapsed_Time 1.00, CPU_Time 1.00
+       Partition:  pbs_genopt_0 - PBS_Generic_Opt-Distributed_Gobble - Elapsed_Time 0.00, CPU_Time 0.00
+       Partition:  pbs_genopt_0 - PBS_Generic_Opt-Distributed_Report - Elapsed_Time 0.00, CPU_Time 0.00
+       Start - Partition: pbs_genopt_0 Slack: -66.6 TNS: 14968.0 Cell-Count: 52749 Cell-Area: 152162 
+Init-Memory: 1142.78
+       Done  - Partition: pbs_genopt_0 Slack: -118.7 TNS: 27308.9 Cell-Count: 25046 Cell-Area: 73125 
+Peak-Memory: 2661.40 Elapsed: 204
+       Partition:  pbs_genopt_0 - PBS_Generic_Opt-Distributed_Write_DB - Elapsed_Time 2.00, CPU_Time 2.99
+       pbs_genopt_0 - PBS_Generic_Opt-Assembly - Elapsed_Time 2, CPU_Time 1.0
+       Partition:  pbs_genopt_0 - Runtime taken by the partition - Elapsed_Time 206.00, CPU_Time 204.97
+          Received 'pbs_genopt_1 ./.pbs_vlsi73.ee.iitb.ac.in_178740/pbs_genopt_1.etf' from server 'localhost_1_5'. (4447254 ms elapsed)
+       Partition:  pbs_genopt_1 - PBS_Generic_Opt-Distributed_Read_DB - Elapsed_Time 25.00, CPU_Time 24.00
+       Partition:  pbs_genopt_1 - PBS_Generic_Opt-Distributed_Generic - Elapsed_Time 4337.00, CPU_Time 4310.91
+       Partition:  pbs_genopt_1 - PBS_Generic_Opt-Distributed_Prop_Const - Elapsed_Time 7.00, CPU_Time 6.00
+       Partition:  pbs_genopt_1 - PBS_Generic_Opt-Distributed_Gobble - Elapsed_Time 1.00, CPU_Time 1.00
+       Partition:  pbs_genopt_1 - PBS_Generic_Opt-Distributed_Report - Elapsed_Time 0.00, CPU_Time 0.00
+       Start - Partition: pbs_genopt_1 Slack: -5332.0 TNS: 4839116.8 Cell-Count: 4463500 Cell-Area: 13468750 
+Init-Memory: 8247.05
+       Done  - Partition: pbs_genopt_1 Slack: 312.0 TNS: 0.0 Cell-Count: 675809 Cell-Area: 2280098 
+Peak-Memory: 13746.73 Elapsed: 4370
+       Partition:  pbs_genopt_1 - PBS_Generic_Opt-Distributed_Write_DB - Elapsed_Time 71.00, CPU_Time 74.00
+       pbs_genopt_1 - PBS_Generic_Opt-Assembly - Elapsed_Time 51, CPU_Time 51.0
+       Partition:  pbs_genopt_1 - Runtime taken by the partition - Elapsed_Time 4441.00, CPU_Time 4415.91
+Assembled design in-time
+Background Table : HLO::pre_to_gen_setup 
+--------------------------------------------------------------------
+| Transform       | Accepts | Rejects | Runtime (s) | Netlist ID   | 
+--------------------------------------------------------------------
+| hlo_mux_reorder |       0 |       0 |        9.44 | pbs_genopt_1 | 
+| hlo_mux_reorder |       0 |       0 |        0.13 | pbs_genopt_0 | 
+--------------------------------------------------------------------
+ 
+Background Table : HLO::post_to_gen_setup 
+--------------------------------------------------------------------
+| Transform       | Accepts | Rejects | Runtime (s) | Netlist ID   | 
+--------------------------------------------------------------------
+| hlo_mux_reorder |       0 |       0 |        0.04 | pbs_genopt_1 | 
+| hlo_mux_reorder |       0 |       0 |        0.00 | pbs_genopt_0 | 
+--------------------------------------------------------------------
+ 
+Background Table : UME::pre_hlo_rtlopt 
+--------------------------------------------------------
+| Trick | Accepts | Rejects | Runtime (s) | Netlist ID | 
+--------------------------------------------------------
+--------------------------------------------------------
+ 
+Background Table : HLO::pre_rtlopt 
+------------------------------------------------------------------------------
+| Transform                 | Accepts | Rejects | Runtime (s) | Netlist ID   | 
+------------------------------------------------------------------------------
+| hlo_clip                  |       0 |       0 |        0.04 | pbs_genopt_1 | 
+| hlo_clip_mux_input        |       0 |       0 |        0.07 |              |
+| hlo_datapath_recast       |       0 |       4 |       57.12 |              |
+| hlo_optimize_datapath     |       0 |       0 |        0.04 |              |
+| hlo_mux_consolidation     |       0 |       0 |        0.04 |              |
+| hlo_mux_cascade_opt       |       0 |       0 |        0.04 |              |
+| hlo_reduce_operator_chain |       0 |       0 |        0.04 |              |
+| hlo_identity_transform    |       0 |       0 |        0.04 |              |
+| hlo_common_select_muxopto |       0 |       1 |        0.04 |              |
+| hlo_restructure           |       0 |       0 |        0.04 |              |
+| hlo_reconv_opt            |       0 |       0 |        0.04 |              |
+| hlo_inequality_transform  |       0 |       0 |        9.44 |              |
+| hlo_constant_mux_opt      |       0 |       0 |        0.04 |              |
+| hlo_mux_consolidation     |       0 |       0 |        0.04 |              |
+| hlo_mux_cascade_opt       |       0 |       0 |        0.04 |              |
+| hlo_chop_mux              |       0 |       0 |        0.04 |              |
+| hlo_mux_decode            |       0 |       0 |        0.04 |              |
+| hlo_decode_mux_sandwich   |       0 |       0 |        0.04 |              |
+| hlo_infer_macro           |       0 |       2 |        9.45 |              |
+| hlo_clip                  |       0 |       0 |        0.00 | pbs_genopt_0 | 
+| hlo_clip_mux_input        |       0 |       0 |        0.00 |              |
+| hlo_datapath_recast       |       0 |       0 |        0.00 |              |
+| hlo_optimize_datapath     |       0 |       0 |        0.00 |              |
+| hlo_mux_consolidation     |       0 |       0 |        0.00 |              |
+| hlo_mux_cascade_opt       |       0 |       0 |        0.00 |              |
+| hlo_reduce_operator_chain |       0 |       0 |        0.00 |              |
+| hlo_identity_transform    |       0 |       4 |        0.01 |              |
+| hlo_common_select_muxopto |       0 |       0 |        0.00 |              |
+| hlo_restructure           |       0 |       0 |        0.00 |              |
+| hlo_reconv_opt            |       0 |       0 |        0.00 |              |
+| hlo_inequality_transform  |       0 |       0 |        0.09 |              |
+| hlo_constant_mux_opt      |       0 |       0 |        0.00 |              |
+| hlo_mux_consolidation     |       0 |       0 |        0.00 |              |
+| hlo_mux_cascade_opt       |       0 |       0 |        0.00 |              |
+| hlo_chop_mux              |       0 |       0 |        0.00 |              |
+| hlo_mux_decode            |       0 |       0 |        0.00 |              |
+| hlo_decode_mux_sandwich   |       0 |       0 |        0.00 |              |
+| hlo_infer_macro           |       0 |       2 |        0.07 |              |
+------------------------------------------------------------------------------
+ 
+Background Table : UME::post_hlo_rtlopt 
+----------------------------------------------------------------
+| Trick       | Accepts | Rejects | Runtime (s) | Netlist ID   | 
+----------------------------------------------------------------
+| ume_runtime |       0 |       0 |        0.04 | pbs_genopt_1 | 
+| ume_runtime |       4 |       0 |        0.00 | pbs_genopt_0 | 
+| ume_runtime |       4 |       0 |        0.00 |              |
+----------------------------------------------------------------
+ 
+Background Table : HLO::post_rtlopt 
+------------------------------------------------------------------------
+| Transform           | Accepts | Rejects | Runtime (s) | Netlist ID   | 
+------------------------------------------------------------------------
+| hlo_mux_reorder     |       0 |       0 |        0.00 | pbs_genopt_1 | 
+| hlo_logic_reduction |       0 |       0 |        0.00 |              |
+| hlo_mux_reorder     |       0 |       0 |        0.00 | pbs_genopt_0 | 
+| hlo_logic_reduction |       0 |       0 |        0.00 |              |
+------------------------------------------------------------------------
+ 
+Background Table : HLO::post_muxopt 
+--------------------------------------------------------------------
+| Transform       | Accepts | Rejects | Runtime (s) | Netlist ID   | 
+--------------------------------------------------------------------
+| hlo_speculation |       0 |       0 |        7.85 | pbs_genopt_1 | 
+| hlo_speculation |       0 |       0 |        0.26 | pbs_genopt_0 | 
+--------------------------------------------------------------------
+ 
+
++-----------+----------------------+-----+----------------------+---------------------------+
+|   Host    |       Machine        | CPU | Physical Memory (MB) | Peak Physical Memory (MB) |
++-----------+----------------------+-----+----------------------+---------------------------+
+| localhost | vlsi73.ee.iitb.ac.in |  8  |        7916.3        |          18564.3          |
++-----------+----------------------+-----+----------------------+---------------------------+
+
++---------------+----------------------+---------------------------+
+|    Server     | Physical Memory (MB) | Peak Physical Memory (MB) |
++---------------+----------------------+---------------------------+
+| localhost_1_1 |       70.9 [1]       |          [1] [2]          |
+| localhost_1_2 |       70.9 [1]       |          [1] [2]          |
+| localhost_1_4 |      1254.9 [1]      |          [1] [2]          |
+| localhost_1_3 |       70.9 [1]       |          [1] [2]          |
+| localhost_1_5 |      1501.9 [1]      |          [1] [2]          |
+| localhost_1_6 |       70.9 [1]       |          [1] [2]          |
+| localhost_1_0 |      3192.6 [3]      |        14366.3 [3]        |
+| localhost_1_7 |       70.9 [1]       |          [1] [2]          |
++---------------+----------------------+---------------------------+
+[1] Memory is included in parent localhost_1_0.
+[2] Peak physical memory is not available for forked background servers.
+[3] Memory of child processes is included.
+
+PBS_Generic-Post_Genopt - Elapsed_Time 5047, CPU_Time 5024.17383
+stamp 'PBS_Generic-Post_Genopt' being created for table 'pbs_debug'
+
+  Total Time (Wall) |  Stage Time (Wall)  |   % (Wall)   |    Date - Time     |  Memory   | Stage
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:12:47(00:12:49) |  00:00:00(00:00:00) |   0.0(  0.0) |    7:04:14 (Nov29) |   5.44 GB | PBS_Generic-Start
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 01:36:31(01:38:45) |  01:23:44(01:25:56) | 100.0(100.0) |    8:30:10 (Nov29) |   5.16 GB | PBS_Generic-Post_Genopt
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+Number of threads: 8 * 1   (id: pbs_debug, time_info v1.57)
+Info: (*N*) indicates data that was populated from previously saved time_info database
+Info: CPU time includes time of parent + longest thread
+Updating ST server settings
+     Generating lib_script file: /home/running_courses/EE671/EE671_38/lagrange-interpolation-tss/Synthesis/.pbs_vlsi73.ee.iitb.ac.in_178740/lib_script
+Start partitioning.  Summary: MEM {curr: 5.6G, peak: 13.6G, phys curr: 5.0G, phys peak: 18.1G}
+Start partitioning design lagrange_interp for generic optimization.
+Total generic instances for partitioning: 409655
+	Generic partition 0: size 25046
+	Generic partition 1: size 170356
+	Generic partition 2: size 43896
+	Generic partition 3: size 170357
+Done partitioning.  Summary: RT {elapsed: 0s, ST: 0s}, MEM {curr: 5.6G, peak: 13.6G, phys curr: 5.0G, phys peak: 18.1G}
+Start creating partition netlists.  Summary: MEM {curr: 5.6G, peak: 13.6G, phys curr: 5.0G, phys peak: 18.1G}
+Done creating partition netlists.  Summary: RT {elapsed: 4s, ST: 4s}, MEM {curr: 5.6G, peak: 13.6G, phys curr: 5.0G, phys peak: 18.1G}
+Start budgeting timing for partitions.  Summary: MEM {curr: 5.6G, peak: 13.6G, phys curr: 5.0G, phys peak: 18.1G}
+Done budgeting timing for partitions.  Summary: RT {elapsed: 13s, ST: 15s}, MEM {curr: 3.9G, peak: 13.6G, phys curr: 2.8G, phys peak: 18.1G}
+Start deriving partition netlists.  Summary: MEM {curr: 3.9G, peak: 13.6G, phys curr: 2.8G, phys peak: 18.1G}
+The inst 'pbs_fcopt_0' is selected as pbs candidate. The instance cnt is: '25046'.
+The inst 'pbs_fcopt_1' is selected as pbs candidate. The instance cnt is: '170356'.
+The inst 'pbs_fcopt_2' is selected as pbs candidate. The instance cnt is: '43896'.
+The inst 'pbs_fcopt_3' is selected as pbs candidate. The instance cnt is: '170357'.
+Done deriving partition netlists.  Summary: RT {elapsed: 10s, ST: 10s}, MEM {curr: 3.9G, peak: 13.6G, phys curr: 2.8G, phys peak: 18.1G}
+Wait for super-thread servers to finish loading libraries.
+Start super thread servers forking.  Summary: MEM {curr: 3.8G, peak: 13.6G, phys curr: 2.8G, phys peak: 18.1G}
+Info    : Connection established with super-threading server. [ST-110]
+        : The server 'localhost_1_8' is forked process '43177' on this host.
+Info    : Connection established with super-threading server. [ST-110]
+        : The server 'localhost_1_9' is forked process '43180' on this host.
+Info    : Connection established with super-threading server. [ST-110]
+        : The server 'localhost_1_10' is forked process '43182' on this host.
+Info    : Connection established with super-threading server. [ST-110]
+        : The server 'localhost_1_11' is forked process '43184' on this host.
+Info    : Connection established with super-threading server. [ST-110]
+        : The server 'localhost_1_12' is forked process '43186' on this host.
+Info    : Connection established with super-threading server. [ST-110]
+        : The server 'localhost_1_13' is forked process '43188' on this host.
+Info    : Connection established with super-threading server. [ST-110]
+        : The server 'localhost_1_14' is forked process '43190' on this host.
+Done super thread servers forking.  Summary: RT {elapsed: 0s, ST: 0s}, MEM {curr: 3.8G, peak: 13.6G, phys curr: 2.8G, phys peak: 18.1G}
+        Distributing super-thread jobs: {pbs_fcopt_3 ./.pbs_vlsi73.ee.iitb.ac.in_178740/pbs_fcopt_3.etf} {pbs_fcopt_1 ./.pbs_vlsi73.ee.iitb.ac.in_178740/pbs_fcopt_1.etf} {pbs_fcopt_2 ./.pbs_vlsi73.ee.iitb.ac.in_178740/pbs_fcopt_2.etf} {pbs_fcopt_0 ./.pbs_vlsi73.ee.iitb.ac.in_178740/pbs_fcopt_0.etf}
+          Sending 'pbs_fcopt_3 ./.pbs_vlsi73.ee.iitb.ac.in_178740/pbs_fcopt_3.etf' to server 'localhost_1_11'...
+            Sent 'pbs_fcopt_3 ./.pbs_vlsi73.ee.iitb.ac.in_178740/pbs_fcopt_3.etf' to server 'localhost_1_11'.
+          Sending 'pbs_fcopt_1 ./.pbs_vlsi73.ee.iitb.ac.in_178740/pbs_fcopt_1.etf' to server 'localhost_1_14'...
+            Sent 'pbs_fcopt_1 ./.pbs_vlsi73.ee.iitb.ac.in_178740/pbs_fcopt_1.etf' to server 'localhost_1_14'.
+          Sending 'pbs_fcopt_2 ./.pbs_vlsi73.ee.iitb.ac.in_178740/pbs_fcopt_2.etf' to server 'localhost_1_13'...
+            Sent 'pbs_fcopt_2 ./.pbs_vlsi73.ee.iitb.ac.in_178740/pbs_fcopt_2.etf' to server 'localhost_1_13'.
+          Sending 'pbs_fcopt_0 ./.pbs_vlsi73.ee.iitb.ac.in_178740/pbs_fcopt_0.etf' to server 'localhost_1_9'...
+            Sent 'pbs_fcopt_0 ./.pbs_vlsi73.ee.iitb.ac.in_178740/pbs_fcopt_0.etf' to server 'localhost_1_9'.
+          Received 'pbs_fcopt_0 ./.pbs_vlsi73.ee.iitb.ac.in_178740/pbs_fcopt_0.etf' from server 'localhost_1_9'. (56583 ms elapsed)
+       Partition:  pbs_fcopt_0 - PBS_Generic_Opt-Distributed_Read_DB - Elapsed_Time 1.00, CPU_Time 0.00
+       Partition:  pbs_fcopt_0 - PBS_Generic_Opt-Distributed_Generic - Elapsed_Time 2.00, CPU_Time 1.98
+       Partition:  pbs_fcopt_0 - PBS_Generic_Opt-First_Cond - Elapsed_Time 52.00, CPU_Time 53.19
+       Partition:  pbs_fcopt_0 - PBS_Generic_Opt-Distributed_Prop_Const - Elapsed_Time 1.00, CPU_Time 0.00
+       Partition:  pbs_fcopt_0 - PBS_Generic_Opt-Distributed_Gobble - Elapsed_Time 0.00, CPU_Time 0.00
+       Partition:  pbs_fcopt_0 - PBS_Generic_Opt-Distributed_Report - Elapsed_Time 0.00, CPU_Time 0.00
+       Start - Partition: pbs_fcopt_0 Slack: 623.6 TNS: 0.0 Cell-Count: 25046 Cell-Area: 73125 
+Init-Memory: 1087.78
+       Done  - Partition: pbs_fcopt_0 Slack: -267.8 TNS: 66473.4 Cell-Count: 8205 Cell-Area: 33474 
+Peak-Memory: 1308.97 Elapsed: 56
+       Partition:  pbs_fcopt_0 - PBS_Generic_Opt-Distributed_Write_DB - Elapsed_Time 1.00, CPU_Time 1.99
+       pbs_fcopt_0 - PBS_Generic_Opt-Assembly - Elapsed_Time 0, CPU_Time 0.0
+       Partition:  pbs_fcopt_0 - Runtime taken by the partition - Elapsed_Time 57.00, CPU_Time 57.16
+          Received 'pbs_fcopt_2 ./.pbs_vlsi73.ee.iitb.ac.in_178740/pbs_fcopt_2.etf' from server 'localhost_1_13'. (89920 ms elapsed)
+       Partition:  pbs_fcopt_2 - PBS_Generic_Opt-Distributed_Read_DB - Elapsed_Time 1.00, CPU_Time 0.00
+       Partition:  pbs_fcopt_2 - PBS_Generic_Opt-Distributed_Generic - Elapsed_Time 3.00, CPU_Time 3.98
+       Partition:  pbs_fcopt_2 - PBS_Generic_Opt-First_Cond - Elapsed_Time 83.00, CPU_Time 88.91
+       Partition:  pbs_fcopt_2 - PBS_Generic_Opt-Distributed_Prop_Const - Elapsed_Time 1.00, CPU_Time 1.00
+       Partition:  pbs_fcopt_2 - PBS_Generic_Opt-Distributed_Gobble - Elapsed_Time 0.00, CPU_Time 0.00
+       Partition:  pbs_fcopt_2 - PBS_Generic_Opt-Distributed_Report - Elapsed_Time 0.00, CPU_Time 0.00
+       Start - Partition: pbs_fcopt_2 Slack: 219.3 TNS: 0.0 Cell-Count: 43896 Cell-Area: 150597 
+Init-Memory: 1115.78
+       Done  - Partition: pbs_fcopt_2 Slack: 219.3 TNS: 0.0 Cell-Count: 16175 Cell-Area: 79305 
+Peak-Memory: 1824.73 Elapsed: 88
+       Partition:  pbs_fcopt_2 - PBS_Generic_Opt-Distributed_Write_DB - Elapsed_Time 2.00, CPU_Time 1.98
+       pbs_fcopt_2 - PBS_Generic_Opt-Assembly - Elapsed_Time 1, CPU_Time 0.0
+       Partition:  pbs_fcopt_2 - Runtime taken by the partition - Elapsed_Time 90.00, CPU_Time 95.87
+          Received 'pbs_fcopt_1 ./.pbs_vlsi73.ee.iitb.ac.in_178740/pbs_fcopt_1.etf' from server 'localhost_1_14'. (447794 ms elapsed)
+       Partition:  pbs_fcopt_1 - PBS_Generic_Opt-Distributed_Read_DB - Elapsed_Time 1.00, CPU_Time 1.00
+       Partition:  pbs_fcopt_1 - PBS_Generic_Opt-Distributed_Generic - Elapsed_Time 11.00, CPU_Time 10.99
+       Partition:  pbs_fcopt_1 - PBS_Generic_Opt-First_Cond - Elapsed_Time 420.00, CPU_Time 418.78
+       Partition:  pbs_fcopt_1 - PBS_Generic_Opt-Distributed_Prop_Const - Elapsed_Time 2.00, CPU_Time 3.00
+       Partition:  pbs_fcopt_1 - PBS_Generic_Opt-Distributed_Gobble - Elapsed_Time 0.00, CPU_Time 0.00
+       Partition:  pbs_fcopt_1 - PBS_Generic_Opt-Distributed_Report - Elapsed_Time 0.00, CPU_Time 0.00
+       Start - Partition: pbs_fcopt_1 Slack: 357.9 TNS: 0.0 Cell-Count: 170356 Cell-Area: 570597 
+Init-Memory: 1284.59
+       Done  - Partition: pbs_fcopt_1 Slack: 357.9 TNS: 0.0 Cell-Count: 99757 Cell-Area: 426656 
+Peak-Memory: 2025.47 Elapsed: 434
+       Partition:  pbs_fcopt_1 - PBS_Generic_Opt-Distributed_Write_DB - Elapsed_Time 13.00, CPU_Time 12.97
+       pbs_fcopt_1 - PBS_Generic_Opt-Assembly - Elapsed_Time 4, CPU_Time 4.0
+       Partition:  pbs_fcopt_1 - Runtime taken by the partition - Elapsed_Time 447.00, CPU_Time 446.74
+          Received 'pbs_fcopt_3 ./.pbs_vlsi73.ee.iitb.ac.in_178740/pbs_fcopt_3.etf' from server 'localhost_1_11'. (457733 ms elapsed)
+       Partition:  pbs_fcopt_3 - PBS_Generic_Opt-Distributed_Read_DB - Elapsed_Time 2.00, CPU_Time 1.00
+       Partition:  pbs_fcopt_3 - PBS_Generic_Opt-Distributed_Generic - Elapsed_Time 9.00, CPU_Time 10.99
+       Partition:  pbs_fcopt_3 - PBS_Generic_Opt-First_Cond - Elapsed_Time 430.00, CPU_Time 429.58
+       Partition:  pbs_fcopt_3 - PBS_Generic_Opt-Distributed_Prop_Const - Elapsed_Time 2.00, CPU_Time 2.00
+       Partition:  pbs_fcopt_3 - PBS_Generic_Opt-Distributed_Gobble - Elapsed_Time 0.00, CPU_Time 1.00
+       Partition:  pbs_fcopt_3 - PBS_Generic_Opt-Distributed_Report - Elapsed_Time 0.00, CPU_Time 0.00
+       Start - Partition: pbs_fcopt_3 Slack: 352.8 TNS: 0.0 Cell-Count: 170357 Cell-Area: 570608 
+Init-Memory: 1284.59
+       Done  - Partition: pbs_fcopt_3 Slack: 352.8 TNS: 0.0 Cell-Count: 99758 Cell-Area: 426667 
+Peak-Memory: 2027.62 Elapsed: 443
+       Partition:  pbs_fcopt_3 - PBS_Generic_Opt-Distributed_Write_DB - Elapsed_Time 14.00, CPU_Time 13.95
+       pbs_fcopt_3 - PBS_Generic_Opt-Assembly - Elapsed_Time 4, CPU_Time 4.0
+       Partition:  pbs_fcopt_3 - Runtime taken by the partition - Elapsed_Time 457.00, CPU_Time 458.52
+Assembled design in-time
+
++-----------+----------------------+-----+----------------------+---------------------------+
+|   Host    |       Machine        | CPU | Physical Memory (MB) | Peak Physical Memory (MB) |
++-----------+----------------------+-----+----------------------+---------------------------+
+| localhost | vlsi73.ee.iitb.ac.in |  8  |        3993.3        |          18564.3          |
++-----------+----------------------+-----+----------------------+---------------------------+
+
++----------------+----------------------+---------------------------+
+|     Server     | Physical Memory (MB) | Peak Physical Memory (MB) |
++----------------+----------------------+---------------------------+
+| localhost_1_9  |      191.7 [1]       |          [1] [2]          |
+| localhost_1_10 |       73.3 [1]       |          [1] [2]          |
+| localhost_1_12 |       73.3 [1]       |          [1] [2]          |
+| localhost_1_11 |      506.3 [1]       |          [1] [2]          |
+| localhost_1_0  |      1775.8 [3]      |        14366.3 [3]        |
+| localhost_1_8  |       73.3 [1]       |          [1] [2]          |
+| localhost_1_13 |      264.2 [1]       |          [1] [2]          |
+| localhost_1_14 |      514.8 [1]       |          [1] [2]          |
++----------------+----------------------+---------------------------+
+[1] Memory is included in parent localhost_1_0.
+[2] Peak physical memory is not available for forked background servers.
+[3] Memory of child processes is included.
+
+PBS_Generic_Opt-Post - Elapsed_Time 5553, CPU_Time 5531.747405
+stamp 'PBS_Generic_Opt-Post' being created for table 'pbs_debug'
+
+  Total Time (Wall) |  Stage Time (Wall)  |   % (Wall)   |    Date - Time     |  Memory   | Stage
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:12:47(00:12:49) |  00:00:00(00:00:00) |   0.0(  0.0) |    7:04:14 (Nov29) |   5.44 GB | PBS_Generic-Start
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 01:36:31(01:38:45) |  01:23:44(01:25:56) |  90.8( 91.1) |    8:30:10 (Nov29) |   5.16 GB | PBS_Generic-Post_Genopt
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 01:44:58(01:47:11) |  00:08:27(00:08:26) |   9.2(  8.9) |    8:38:36 (Nov29) |   2.65 GB | PBS_Generic_Opt-Post
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+Number of threads: 8 * 1   (id: pbs_debug, time_info v1.57)
+Info: (*N*) indicates data that was populated from previously saved time_info database
+Info: CPU time includes time of parent + longest thread
+PBS_Generic-Postgen HBO Optimizations - Elapsed_Time 4, CPU_Time 4.0
+stamp 'PBS_Generic-Postgen HBO Optimizations' being created for table 'pbs_debug'
+
+  Total Time (Wall) |  Stage Time (Wall)  |   % (Wall)   |    Date - Time     |  Memory   | Stage
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:12:47(00:12:49) |  00:00:00(00:00:00) |   0.0(  0.0) |    7:04:14 (Nov29) |   5.44 GB | PBS_Generic-Start
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 01:36:31(01:38:45) |  01:23:44(01:25:56) |  90.8( 91.0) |    8:30:10 (Nov29) |   5.16 GB | PBS_Generic-Post_Genopt
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 01:44:58(01:47:11) |  00:08:27(00:08:26) |   9.2(  8.9) |    8:38:36 (Nov29) |   2.65 GB | PBS_Generic_Opt-Post
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 01:45:02(01:47:15) |  00:00:04(00:00:04) |   0.1(  0.1) |    8:38:40 (Nov29) |   2.65 GB | PBS_Generic-Postgen HBO Optimizations
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+Number of threads: 8 * 1   (id: pbs_debug, time_info v1.57)
+Info: (*N*) indicates data that was populated from previously saved time_info database
+Info: CPU time includes time of parent + longest thread
+##>===== Cadence Confidential (Generic-Logical) =====
+##>ST Summary (2 partitions in total):
+##>------------------------------------
+##>PARTITION                1         0
+##>------------------------------------
+##>PRE_WNS              -5332       -66
+##>PRE_TNS            4839116     14968
+##>PRE_CNT            4463500     52749
+##>PRE_PORT_CNT          2814      2555
+##>PRE_AREA          13468750    152162
+##>PRE_LEAK_PWR      25071908    276557
+##>PRE_EX_DEL_CNT        2815      2556
+##>------------------------------------
+##>POST_WNS               312      -118
+##>POST_TNS                 0     27308
+##>POST_CNT            675809     25046
+##>POST_PORT_CNT         2814      2555
+##>POST_AREA          2280098     73125
+##>POST_LEAK_PWR      6575454    131683
+##>POST_EX_DEL_CNT       2815      2556
+##>------------------------------------
+##>R:Read DB               25         0
+##>R:Mux Opto              16         0
+##>R:Generic             4320       202
+##>R:Retime                 0         0
+##>R:Clk Gate               0         0
+##>R:Const Prop             7         1
+##>R:Gobble                 1         0
+##>R:Set Targets            0         0
+##>R:Write DB              71         2
+##>R:Misc                   0         0
+##>Total Elapsed         4441       206
+##>====================================
+##>======== Cadence Confidential (Generic-Logical) ========
+##>ST Summary (4 partitions in total):
+##>--------------------------------------------------------
+##>PARTITION                3         1         2         0
+##>--------------------------------------------------------
+##>PRE_WNS                352       357       219       623
+##>PRE_TNS                  0         0         0         0
+##>PRE_CNT             170357    170356     43896     25046
+##>PRE_PORT_CNT           771       771      3077      2309
+##>PRE_AREA            570608    570597    150597     73125
+##>PRE_LEAK_PWR       1607611   1607510    567384    131683
+##>PRE_EX_DEL_CNT         772       772      3077      2310
+##>--------------------------------------------------------
+##>POST_WNS               352       357       219      -267
+##>POST_TNS                 0         0         0     66473
+##>POST_CNT             99758     99757     16175      8205
+##>POST_PORT_CNT          771       771      3077      2309
+##>POST_AREA           426667    426656     79305     33474
+##>POST_LEAK_PWR      1150183   1150082    347149     43446
+##>POST_EX_DEL_CNT        772       772      3077      2310
+##>--------------------------------------------------------
+##>F:Read DB                2         1         1         1
+##>F:Mux Opto               0         0         0         0
+##>F:Generic                9        11         3         2
+##>F:Retime                 0         0         0         0
+##>F:Clk Gate               0         0         0         0
+##>F:Const Prop             2         2         1         1
+##>F:Gobble                 0         0         0         0
+##>F:Set Targets          430       420        83        52
+##>F:Write DB              14        13         2         1
+##>F:Misc                   0         0         0         0
+##>Total Elapsed          457       447        90        57
+##>========================================================
+##>Main Thread Summary:
+##>----------------------------------------------------------------------------------------
+##>STEP                           Elapsed       WNS       TNS     Insts      Area    Memory
+##>----------------------------------------------------------------------------------------
+##>G:Initial                          241         -         -   4516249  13620913      5445
+##>G:Setup                             11         -         -         -         -     13970
+##>G:Launch ST                         11         -         -         -         -     13970
+##>G:Design Partition                   0         -         -         -         -     13970
+##>G:Create Partition Netlists         52         -         -         -         -     13970
+##>G:Init Power                         0         -         -         -         -     13970
+##>G:Budgeting                         85         -         -         -         -     13970
+##>G:Derenv-DB                        296         -         -         -         -     13970
+##>G:Debug Outputs                      0         -         -         -         -         -
+##>G:ST loading                         1         -         -         -         -     13970
+##>G:Distributed                     4905         -         -         -         -     13970
+##>G:Timer                             69         -         -         -         -     13970
+##>G:Assembly                          55         -         -         -         -     13970
+##>G:DFT                                5         -         -         -         -     13970
+##>G:Const Prop                         4         -         -    223895    966103      2650
+##>G:Misc                              55
+##>----------------------------------------------------------------------------------------
+##>Total Elapsed                     5790
+##>========================================================================================
+Info    : Done synthesizing. [SYNTH-2]
+        : Done synthesizing 'lagrange_interp' to generic gates.
+      flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:*                                                                   syn_gen
+@file(synthesis.tcl) 24: report area > area_report.log
+Warning : The details given in report might be incorrect or incomplete. [RPT-80]
+        : The design design:lagrange_interp should be mapped to get accurate area details.
+        : Map the design using syn_map before using the '-detail' option of the 'report_area' command.
+@file(synthesis.tcl) 25: report timing > timing_report.log
+@file(synthesis.tcl) 28: write_hdl > ../Synthesis/RTL/post_synthesis_netlist.v
+@file(synthesis.tcl) 30: echo "Basic synthesis completed successfully!"
+Basic synthesis completed successfully!
+@file(synthesis.tcl) 31: quit
+
+Lic Summary:
+[08:38:55.103290] Cdslmd servers: cadence-c2s
+[08:38:55.103296] Feature usage summary:
+[08:38:55.103296] Genus_Synthesis
+
+=======================
+PBS_overall Index: 0.00
+=======================
+Error    : Unable to complete periodic license check succesfully (Sat Nov 29 08:38:55 2025
+).Normal exit.

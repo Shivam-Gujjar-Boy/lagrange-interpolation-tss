@@ -1,31 +1,31 @@
-# Set library paths
-set LIB_PATH /path/to/your/libs
-set_target_library "$LIB_PATH/slow.db"
-set_link_library "* $LIB_PATH/slow.db"
+# Simple synthesis flow - avoid advanced features
+set_db init_lib_search_path {/vlsi/pdk/course_pdk_2025/tsmc_gp_65_stdio/tcbn65gplus_200a/TSMCHOME/digital/Front_End/timing_power_noise/CCS/tcbn65gplus_200a}
 
-# Read design
-read_verilog ../Verilog/lagrange_interp.v
-read_verilog ../Verilog/mod_add.v
-read_verilog ../Verilog/mod_sub.v
-read_verilog ../Verilog/mod_mul.v
-read_verilog ../Verilog/mod_inv.v
+# Load technology library
+read_libs {tcbn65gpluswc_ccs.lib}
+
+# Read design files
+read_hdl -v2001 ../Verilog/lagrange_interp.v
+read_hdl -v2001 ../Verilog/mod_add.v  
+read_hdl -v2001 ../Verilog/mod_sub.v
+read_hdl -v2001 ../Verilog/mod_mul.v
+read_hdl -v2001 ../Verilog/mod_inv.v
 
 # Set top module
-current_design lagrange_interp
+elaborate lagrange_interp
 
 # Apply constraints
 read_sdc constraints.sdc
 
-# Synthesis
-compile_ultra
+# Use only basic synthesis - no advanced optimizations
+syn_generic
 
 # Generate reports
-report_area > area_report.log
-report_timing > timing_report.log
-report_power > power_report.log
+report area > area_report.log
+report timing > timing_report.log
 
 # Save netlist
-write -format verilog -hierarchy -output ../Synthesis/RTL/post_synthesis_netlist.v
+write_hdl > ../Synthesis/RTL/post_synthesis_netlist.v
 
-# Exit
-exit
+echo "Basic synthesis completed successfully!"
+quit

@@ -1,12 +1,20 @@
-# Clock constraints
+# Create clock - 100MHz frequency
 create_clock -name clk -period 10 [get_ports clk]
-set_clock_uncertainty 0.5 [get_clocks clk]
-set_input_delay 2 -clock clk [remove_from_collection [all_inputs] [get_ports clk]]
-set_output_delay 2 -clock clk [all_outputs]
 
-# Input/output constraints
-set_driving_cell -lib_cell INVX1 [all_inputs]
-set_load 0.5 [all_outputs]
+# Clock uncertainty
+set_clock_uncertainty 0.2 [get_clocks clk]
 
-# Don't touch these
-set_dont_touch [get_nets rst_n]
+# Input delays
+set_input_delay 1.5 -clock clk [all_inputs]
+
+# Output delays  
+set_output_delay 1.5 -clock clk [all_outputs]
+
+# Don't optimize reset network
+set_dont_touch_network [get_ports rst_n]
+
+# Set driving cells
+set_driving_cell -lib_cell INVX4 [all_inputs]
+
+# Set load capacitance
+set_load 0.05 [all_outputs]

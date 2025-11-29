@@ -1,0 +1,56 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2024 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[06:01:50.275809] Configured Lic search path (21.01-s002): 5280@14.139.1.126
+
+Version: 21.19-s055_1, built Wed May 29 04:03:07 PDT 2024
+Options: -files synthesis.tcl -log ../Synthesis/Logs/genus_synthesis.log 
+Date:    Sat Nov 29 06:01:50 2025
+Host:    vlsi73.ee.iitb.ac.in (x86_64 w/Linux 3.10.0-1160.119.1.el7.x86_64) (64cores*256cpus*2physical cpus*AMD EPYC 7713 64-Core Processor 512KB) (528084468KB)
+PID:     103108
+OS:      CentOS Linux release 7.9.2009 (Core)
+
+
+[06:01:51.147745] Periodic Lic check successful
+[06:01:51.147761] Feature usage summary:
+[06:01:51.147762] Genus_Synthesis
+Checking out license: Genus_Synthesis
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Loading tool scripts...
+Finished loading tool scripts (18 seconds elapsed).
+
+#@ Processing -files option
+@genus 1> source synthesis.tcl
+#@ Begin verbose source ./synthesis.tcl
+@file(synthesis.tcl) 2: set_db init_lib_search_path {/vlsi/pdk/course_pdk_2025/tsmc_gp_65_stdio/tcbn65gplus_200a/TSMCHOME/digital/Front_End/timing_power_noise/CCS/tcbn65gplus_120a}
+  Setting attribute of root '/': 'init_lib_search_path' = /vlsi/pdk/course_pdk_2025/tsmc_gp_65_stdio/tcbn65gplus_200a/TSMCHOME/digital/Front_End/timing_power_noise/CCS/tcbn65gplus_120a
+@file(synthesis.tcl) 5: read_libs {tcbn65gpluswc.lib}
+Error   : File error. [FILE-100] [::legacy::set_attribute]
+        : Cannot open file 'tcbn65gpluswc.lib'
+        : Make sure that the file is a readable regular file and has the specified name.
+Error   : A library file does not exist. [LBR-68] [::legacy::set_attribute]
+        : File 'tcbn65gpluswc.lib' could not be found. File '<none>' was the last file that was successfully read in.
+        : Make sure that the library file exists or check for a typo in the file name.
+Error   : The data value for this attribute is invalid. [TUI-24] [::legacy::set_attribute]
+        : The value '  { tcbn65gpluswc.lib } ' cannot be set for attribute 'library'.
+        : To see the usage/description for this attribute, type '::legacy::set_attribute -h <attr_name> *' (in legacy UI mode) or 'help * <attr_name> -detail' (in CUI mode).
+#@ End verbose source ./synthesis.tcl
+1
+Encountered problems processing file: synthesis.tcl
+WARNING: This version of the tool is 548 days old.
+@genus:root: 2> exit
+
+Lic Summary:
+[06:03:33.215192] Cdslmd servers: cadence-c2s
+[06:03:33.215218] Feature usage summary:
+[06:03:33.215218] Genus_Synthesis
+
+Normal exit.

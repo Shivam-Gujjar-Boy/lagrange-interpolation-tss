@@ -1,0 +1,61 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2024 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[05:39:26.275913] Configured Lic search path (21.01-s002): 5280@14.139.1.126
+
+Version: 21.19-s055_1, built Wed May 29 04:03:07 PDT 2024
+Options: -files synthesis.tcl -log ../Synthesis/Logs/genus_synthesis.log 
+Date:    Sat Nov 29 05:39:26 2025
+Host:    vlsi73.ee.iitb.ac.in (x86_64 w/Linux 3.10.0-1160.119.1.el7.x86_64) (64cores*256cpus*2physical cpus*AMD EPYC 7713 64-Core Processor 512KB) (528084468KB)
+PID:     76681
+OS:      CentOS Linux release 7.9.2009 (Core)
+
+
+[05:39:26.450425] Periodic Lic check successful
+[05:39:26.450434] Feature usage summary:
+[05:39:26.450435] Genus_Synthesis
+Checking out license: Genus_Synthesis
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Loading tool scripts...
+Finished loading tool scripts (23 seconds elapsed).
+
+#@ Processing -files option
+@genus 1> source synthesis.tcl
+#@ Begin verbose source ./synthesis.tcl
+@file(synthesis.tcl) 2: set_db init_lib_search_path {/vlsi/lib/tsmc/45nm/}
+  Setting attribute of root '/': 'init_lib_search_path' = /vlsi/lib/tsmc/45nm/
+@file(synthesis.tcl) 5: read_libs {/vlsi/lib/tsmc/45nm/stdcell.lib}
+Error   : File error. [FILE-100] [::legacy::set_attribute]
+        : Cannot open file '/vlsi/lib/tsmc/45nm/stdcell.lib'. File not found.
+        : Make sure that the file is a readable regular file and has the specified name.
+Error   : A library file does not exist. [LBR-68] [::legacy::set_attribute]
+        : File '/vlsi/lib/tsmc/45nm/stdcell.lib' could not be found. File '<none>' was the last file that was successfully read in.
+        : Make sure that the library file exists or check for a typo in the file name.
+Error   : The data value for this attribute is invalid. [TUI-24] [::legacy::set_attribute]
+        : The value '  { /vlsi/lib/tsmc/45nm/stdcell.lib } ' cannot be set for attribute 'library'.
+        : To see the usage/description for this attribute, type '::legacy::set_attribute -h <attr_name> *' (in legacy UI mode) or 'help * <attr_name> -detail' (in CUI mode).
+#@ End verbose source ./synthesis.tcl
+1
+Encountered problems processing file: synthesis.tcl
+WARNING: This version of the tool is 548 days old.
+@genus:root: 2> find /vlsi -name "*.lib" -type f 2>/dev/null | head -10
+
+Another Ctrl-C within 1 second will terminate the tool.
+CURRENT RESOURCES: RT {elapsed: 61s, ST: 8s, FG: 8s, CPU: 4.7%}, MEM {curr: 1.0G, peak: 1.0G, phys curr: 0.2G, phys peak: 0.2G}, SYS {load: 9.3, cpu: 256, total: 503.6G, free: 324.0G}
+child killed: interrupt
+@genus:root: 3> exit
+
+Lic Summary:
+[05:40:28.279209] Cdslmd servers: cadence-c2s
+[05:40:28.279234] Feature usage summary:
+[05:40:28.279235] Genus_Synthesis
+
+Normal exit.
